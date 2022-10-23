@@ -53,16 +53,33 @@ document.getElementById("btnOrder").onclick = function name(params) {
  * Bài 2
  * Mô hình 3 khối
  * - Đầu vào: chọn ai là người đang sử dụng máy
- * - Xử lí: gán value "Ba", "Mẹ", "Anh", "Em" cho từng selection = a
+ * - Xử lí: gán value "Ba", "Mẹ", "Anh", "Em" cho từng selection 
  * - Đầu ra: in ra màn hình "Xin chào" + a
  */
 document.getElementById("btnHello").onclick = function () {
-  var a = document.getElementById("using").value;
-  document.getElementById("infoHello").innerHTML = "";
-  var rs = document.createElement("p");
-  rs.innerHTML = "Xin chào " + a;
-  document.getElementById("infoHello").appendChild(rs);
-  rs.className = "alert alert-success";
+  var using = document.getElementById("using").value;
+  var b = "Xin chào bố";
+  var m = "Xin chào Mẹ";
+  var a = "Xin chào Anh";
+  var e = "Xin chào Em";
+
+  var rs = "";
+  
+
+  if (using== "Bố"){
+    rs = b;
+  }else if (using === "Mẹ"){
+    rs = m;
+  }else if( using === "Anh"){
+    rs = a;
+  }else if (using === "Em"){
+    rs = e;
+  } else {
+    rs = "nhập lại"
+  }
+  
+  document.getElementById("infoHello").innerHTML = rs;
+
 };
 
 /**
@@ -144,3 +161,6 @@ document.getElementById("btnAnalys").onclick = function () {
   document.getElementById("infoAnalys").appendChild(result);
   result.className = "alert alert-success";
 };
+
+
+
